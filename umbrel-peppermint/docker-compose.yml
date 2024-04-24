@@ -12,12 +12,7 @@ services:
     image: pepperlabs/peppermint:latest
     user: "1000:1000"
     init: true
-    ports:
-      - 3000:3000
-      - 5003:5003
     restart: always
-    depends_on:
-      - peppermint_postgres
     environment:
       DB_USERNAME: "peppermint"
       DB_PASSWORD: "1234"
