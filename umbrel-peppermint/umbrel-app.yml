@@ -1,18 +1,14 @@
 manifestVersion: 1
-id: umbrel-radicale
-name: Radicale
-tagline: Replace this tagline with your app's tagline
+id: umbrel-peppermimt
+name: Peppermint.Sh
+tagline: Elevate Your Customer Support
 icon: https://svgur.com/i/mvA.svg
-category: Development
+category: "Files & Productivity"
 version: "1.0.0"
-port: 4000
+port: 3000
 description: >-
-  Add your app's description here.
-
-
-  You can also add newlines!
-
-developer: Umbrel
+  Peppermint offers a refreshing approach to customer support in a cost-conscious world
+developer: Anon
 website: https://umbrel.com
 submitter: Umbrel
 submission: https://github.com/getumbrel/umbrel-hello-world-app
@@ -26,5 +22,5 @@ releaseNotes: >-
   Add what's new in the latest version of your app here.
 dependencies: []
 path: ""
-defaultUsername: ""
-defaultPassword: ""
+defaultUsername: "admin@admin.com"
+defaultPassword: "1234"
