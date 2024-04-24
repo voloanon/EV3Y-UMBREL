@@ -2,17 +2,21 @@ version: "3.7"
 
 services:
 
-  app_proxy:
-    environment:
-      # The format here is: <app-id>_<docker-service-name>_1
-      APP_HOST: umbrel-peppermint_peppermint_1
-      APP_PORT: 3000
-    
   peppermint:
     image: pepperlabs/peppermint:latest
     user: "1000:1000"
     init: true
+    ports:
+      - 3000:3000
+      - 5003:5003
     restart: always
+    depends_on:
+      - peppermint_postgres
+    healthcheck:
+      test: ["CMD", "sh", "-c", "wget --spider $$API_URL"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
     environment:
       DB_USERNAME: "peppermint"
       DB_PASSWORD: "1234"
