@@ -1,13 +1,16 @@
 manifestVersion: 1
-id: umbrel-peppermimt
-name: Peppermint.Sh
+id: ev3y-linkstack
+name: Linkstack
 tagline: Elevate Your Customer Support
 icon: https://raw.githubusercontent.com/Peppermint-Lab/peppermint/5fd53aae2525b6a316609d3149543a99b82ca49d/static/logo.svg
 category: "Files & Productivity"
 version: "1.0.0"
 port: 3000
 description: >-
-  Peppermint offers a refreshing approach to customer support in a cost-conscious world
+  LinkStack is a highly customizable link sharing platform with an intuitive, easy to use user interface.
+
+LinkStack allows you to create a personal profile page. Many social media platforms only allow for one link. With this, you can have all the links you want clickable on one site. Set up your personal site on your own server in a few clicks.
+
 developer: Anon
 website: https://umbrel.com
 submitter: Umbrel

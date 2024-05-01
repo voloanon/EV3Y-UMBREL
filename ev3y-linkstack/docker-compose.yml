@@ -1,0 +1,35 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: ev3y-linkstack_server_1
+      APP_PORT: 8088
+
+  server:
+    image: 'linkstackorg/linkstack:latest'
+    restart: unless-stopped
+    environment:
+      TZ: 'US/Eastern'
+      SERVER_ADMIN: 'admin@systemctl.tech'
+      HTTP_SERVER_NAME: 'systemctl.tech'
+      HTTPS_SERVER_NAME: 'systemctl.tech'
+      LOG_LEVEL: 'info'
+      PHP_MEMORY_LIMIT: '256M'
+      UPLOAD_MAX_FILESIZE: '8M'
+    ports:
+      - '8088:80'
+      - '8443:443'
+    depends_on:
+      - db
+    links:
+      - db
+
+  db:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: "cVkmWt0kJ8eMEr848Dn1"
+      MYSQL_USER: "linkstack"
+      MYSQL_PASSWORD: "AQj7H7YaNvmvQsKvj0Hm"
+      MYSQL_DATABASE: "linkstack"
